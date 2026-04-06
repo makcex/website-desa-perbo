@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Website resmi Desa Perbo, Kecamatan Curup Utara, Kabupaten Rejang Lebong. Informasi geografi, perangkat desa, potensi, dan profil desa,bumdes KEME perbo" />
+  <meta name="keywords" content="Desa Perbo, Curup Utara, Rejang Lebong, Bengkulu, profil desa, perangkat desa, potensi desa" />
+  <meta name="author" content="Pemerintah Desa Perbo" />
+  <meta property="og:title" content="Desa Perbo Curup Utara" />
+  <meta property="og:description" content="Desa Asri, Maju, dan Sejahtera di Rejang Lebong, Bengkulu." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://namadomainkamu.com" />
+  <meta property="og:image" content="https://namadomainkamu.com/cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Desa Perbo Curup Utara" />
+  <meta name="twitter:description" content="Website resmi Desa Perbo, Curup Utara." />
+  <meta name="twitter:image" content="https://namadomainkamu.com/cover.jpg" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>Desa Perbo Curup Utara | Profil, Geografi & Potensi Desa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  "name": "Desa Perbo",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curup Utara",
+    "addressRegion": "Bengkulu"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="header-desa">
+  <div class="container">
+    <div class="left-header">
+      <div class="logo"><img src="1000014325.jpg" alt="Logo Desa Perbo" /></div>
+      <div class="info-desa">
+        <h1>Desa Perbo, Curup Utara – Profil & Potensi Desa</h1>
+<p class="subtitle"><strong>Web Resmi Pemerintah Desa Perbo</strong></p>
+        <p>Jl. Desa Perbo No. 123, Email: desa.perbo@email.com</p>
+      </div>
+    </div>
+    <div class="menu">
+      <ul id="menu">
+        <li><a href="#geo">Geografi</a></li>
+        <li><a href="#bumdes">Bumdes</a></li>
+        <li><a href="#penduduk">Jumlah Penduduk</a></li>
+        <li><a href="#struktur">Struktur Organisasi</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#peta">Peta</a></li>
+      </ul>
+    </div>
+    <div class="icon" id="humberger" title="botong tun ko....."><span style="font-size:28px;">☰</span></div>
+  </div>
+</header>
+<div id="draggableCard">
+  <div class="brand-card" onclick="toggleMenu()" title="hubungi Ambo...">
+    <img src="IMG_2487.JPG" alt="Foto Saya">
+    <div class="brand-text">
+      <h4>RK</h4>
+      <p>Web Developer </p>
+    </div>
+  </div>
+  <div class="mini-menu" id="miniMenu">
+    <a href="https://wa.me/628xxxx" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/rk.kusnadi.2025/directory_links" target="_blank">facebook</a>
+    <a href="mailto:emailkamu@gmail.com">Email</a>
+  </div>
+</div>
+<div class="seo-text">
+  <p>Desa Perbo terletak di provinsi bengkulu dan dikelilingi perbukitan
+    di bagian utara terhampar luas bukit basah dengan keaneka ragaman flora dan faunanya.
+    disebelah selatan tedapat bukit hitam yang berbatasan langsung dengan kabupaten kerinci.
+  </p>
+</div>
+<div class="hero">
+  <img src="1000014324.jpg" alt="masjid desa perbo" class="slide active" loading="lazy">
+  <img src="1000014325.jpg" alt="balai desa perbo" class="slide" loading="lazy">
+  <img src="1000014232.jpg" alt="pekebunan desa perbo" class="slide" loading="lazy">
+  <img src="1000014230.jpg" alt="sawah lebar desa perbo" class="slide" loading="lazy">
+
+  <div class="thumbnails">
+    <img src="1000014324.jpg" alt="masjid desa perbo" data-index="0" class="thumb active-thumb" loading="lazy">
+    <img src="1000014325.jpg" alt="balai desa perbo" data-index="1" class="thumb" loading="lazy">
+    <img src="1000014232.jpg" alt="pekebunan desa perbo" data-index="2" class="thumb" loading="lazy">
+    <img src="1000014230.jpg" alt="sawah lebar desa perbo" data-index="3" class="thumb" loading="lazy">
+  </div>
+
+  <div class="overlay"></div>
+  <div class="text" id="slogan">
+    <h2>Selamat Datang di Desa Perbo</h2>
+    <p>Desa Asri, Maju, dan Sejahtera</p>
+  </div>
+</div>
+
+<main>
+  <section class="geografi" id="geo">
+    <h2>Geografis Desa Perbo</h2>
+    <p>Desa Perbo adalah salah satu desa di Kecamatan Curup Utara, Kabupaten Rejang Lebong, Bengkulu, yang terletak di wilayah dataran tinggi terkurung oleh beberapa deratan pegunungan. Desa ini didominasi sektor pertanian dan perkebunan, seperti padi, jagung, dan kopi, dengan kondisi geografis dataran tinggi berbukit. Desa ini berbatasan dengan wilayah pertanian dan perkebunan lain di Curup Utara. Berikut adalah poin-poin geografis DESA PERBO, Curup Utara: Lokasi: Kecamatan Curup Utara, Kabupaten Rejang Lebong, Provinsi Bengkulu. Topografi: Berada di wilayah dataran tinggi/perbukitan yang menjadi ciri khas wilayah Kecamatan Curup Utara. Batas Wilayah (desa): berbatasan dengan Desa Batu Panco (selatan), Kelurahan Tunas Harapan (Utara), Kelurrahan dusun curup (barat), Desa Lubuk Kembang (timur). Potensi: Pertanian tanaman pangan (padi, jagung) dan perkebunan kopi. Iklim/Kondisi: Merupakan daerah terkurung PEGUNUNGAN dan dilalui sebagian hulu Sungai Musi.</p>
+  </section>
+
+  <section class="perangkat">
+    <h2 id="struktur">Struktur Pemerintahan</h2>
+    <div class="chart-wrapper">
+      <div id="chart_div"></div>
+    </div>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+  </section>
+
+  <section id="gallery">
+    <h2>gallery Desa</h2>
+    <div class="gallerycontent"></div>
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:9999;">
+      <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; color:red; font-size:20px;">✖</span>
+      <img id="modalImg" style="border-radius:20px; max-width:90%; max-height:70%;" alt="foto desa">
+      <p id="modalDesc" style="position:absolute; text-align:center; bottom:100px; color:white; background:#222; padding:10px; width:80%; max-width:400px; border-radius:10px;"></p>
+    </div>
+  </section>
+
+  <section id="peta">
+    <h2 style="text-align:center; margin-top:40px;">Peta Lokasi Desa Perbo</h2>
+    <div id="map" style="width:100%;height:450px;"></div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Inisialisasi peta
+  const map = L.map('map').setView([-3.45007, 102.50597], 15);
+
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DigitalGlobe, GeoEye',
+      maxZoom: 19
+  }).addTo(map);
+
+  const desaPerboBoundary = [
+    [-3.451, 102.504],
+    [-3.449, 102.504],
+    [-3.449, 102.507],
+    [-3.451, 102.507]
+  ];
+
+  const polygon = L.polygon(desaPerboBoundary, {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.3
+  }).addTo(map).bindPopup('Batas Desa Perbo');
+
+  let marker = L.marker([-3.45007, 102.50597], {icon: L.icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  })}).addTo(map);
+
+  function isPointInPolygon(point, polygonCoords) {
+    let x = point.lng, y = point.lat;
+    let inside = false;
+    for (let i = 0, j = polygonCoords.length - 1; i < polygonCoords.length; j = i++) {
+      let xi = polygonCoords[i][1], yi = polygonCoords[i][0];
+      let xj = polygonCoords[j][1], yj = polygonCoords[j][0];
+      let intersect = ((yi > y) != (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  map.on('click', function(e) {
+    const latlng = e.latlng;
+    marker.setLatLng(latlng);
+
+    const inside = isPointInPolygon(latlng, desaPerboBoundary);
+    const message = inside
+      ? `Titik di dalam batas desa.<br>Koordinat: ${latlng.lat.toFixed(5)}, ${latlng.lng.toFixed(5)}`
+      : `Titik di luar batas desa!<br>Koordinat: ${latlng.lat.toFixed(5)}, ${latlng.lng.toFixed(5)}`;
+
+    marker.bindPopup(message).openPopup();
+  });
+</script>
+<script src="main.js"></script>
+
+<footer style="text-align:center; padding:10px; font-size:0.9rem; color:#555;">
+  ⚠️ Website ini masih dalam tahap pengembangan. Informasi lengkap akan hadir segera.
+</footer>
+</body>
+</html>
