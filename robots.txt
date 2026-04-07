@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://makcex.github.io/website-desa-perbo/sitemap.xml

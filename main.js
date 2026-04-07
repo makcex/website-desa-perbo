@@ -165,6 +165,20 @@ galleryData.forEach(item => {
 
   galleryContainer.appendChild(card);
 });
+const cards=document.querySelectorAll(".gallery-card")
+cards.forEach(card => {
+card.addEventListener('touchstart', () => {
+      card.style.transform = 'scale(1.05)';
+      card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+    });
+
+    card.addEventListener('touchend', () => {
+      setTimeout(() => {
+        card.style.transform = 'scale(1)';
+        card.style.boxShadow = 'none';
+      }, 150);
+    })
+  });
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const modalDesc = document.getElementById("modalDesc");
@@ -263,11 +277,12 @@ card.addEventListener('touchstart', (e) => {
 document.addEventListener('touchmove', (e) => {
   if (!isDragging) return;
 
+  e.preventDefault();
+
   let x = e.touches[0].clientX - offsetX;
   let y = e.touches[0].clientY - offsetY;
 
-  card.style.left = x + 'px';
-  card.style.top = y + 'px';
+  card.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 document.addEventListener('touchend', () => {
