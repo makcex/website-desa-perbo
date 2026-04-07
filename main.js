@@ -282,7 +282,8 @@ document.addEventListener('touchmove', (e) => {
   let x = e.touches[0].clientX - offsetX;
   let y = e.touches[0].clientY - offsetY;
 
-  card.style.transform = `translate(${x}px, ${y}px)`;
+   card.style.left = x + 'px';
+  card.style.top = y + 'px';
 });
 
 document.addEventListener('touchend', () => {
