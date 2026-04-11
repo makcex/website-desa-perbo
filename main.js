@@ -169,7 +169,7 @@ const cards=document.querySelectorAll(".gallery-card")
 cards.forEach(card => {
 card.addEventListener('touchstart', () => {
       card.style.transform = 'scale(1.05)';
-      card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+      card.style.boxShadow = '0 10px 20px rgba(255,255,255,0.96)';
     });
 
     card.addEventListener('touchend', () => {
