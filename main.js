@@ -121,12 +121,7 @@ function slide(index){
   },
   {
     id: 3,
-    foto: "1000014232.jpg",
-    desc: "Gunung yang mengelilingi desa"
-  },
-  {
-    id: 3,
-    foto: "1000014232.jpg",
+    foto: "1000014324.jpg",
     desc: "Gunung yang mengelilingi desa"
   }
 ];
