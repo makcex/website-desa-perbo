@@ -1,49 +1,27 @@
 //  perangkat desa
-document.addEventListener("DOMContentLoaded", function () {
-  google.charts.load('current', {packages:["orgchart"]});
-  google.charts.setOnLoadCallback(drawChart);
-});
-
-function createNode(jabatan, nama, foto) {
-  return `
-    <div style="text-align:center; padding:10px;">
-      <img src="${foto}" style="width:50px;height:60px;border-radius:50%;object-fit:cover;"><br>
-      <strong>${jabatan}</strong><br>
-      ${nama}
-    </div>
-  `;
-}
-
-function drawChart() {
-  var dataChart = new google.visualization.DataTable();
-  dataChart.addColumn('string', 'Name');
-  dataChart.addColumn('string', 'Manager');
-  dataChart.addColumn('string', 'ToolTip');
-
-  // ✅ DATA (tinggal tambah di sini saja)
+const cardJabatan=document.getElementById("pejabat")
   const anggota = [
-    { id:'Kepala Desa', parent:'', jabatan:'Kepala Desa', nama:'Yudi Ardian', foto:'img/yudi.jpg' },
-    { id:'Sekretaris', parent:'Kepala Desa', jabatan:'Sekretaris', nama:'Aryo Saputra', foto:'img/aryo.jpg' },
-    { id:'Bendahara', parent:'Kepala Desa', jabatan:'Bendahara', nama:'Andes', foto:'img/andes.jpg' },
-    { id:'Kadus I', parent:'Kepala Desa', jabatan:'Kadus I', nama:'M. Munir', foto:'img/munir.jpg' },
-    { id:'Kadus II', parent:'Kepala Desa', jabatan:'Kadus II', nama:'Reza Munandar', foto:'img/reza.jpg' },
+    { id:'1', jabatan:'Kepala Desa', nama:'Yudi Ardian', foto:'img/yudi.jpg' },
+    { id:'2', jabatan:'Sekretaris', nama:'Aryo Saputra', foto:'img/aryo.jpg' },
+    { id:'3',  jabatan:'Bendahara', nama:'Andes', foto:'img/andes.jpg' },
+    { id:'4',  jabatan:'Kadus I', nama:'M. Munir', foto:'img/munir.jpg' },
+    { id:'5',  jabatan:'Kadus II', nama:'Reza Munandar', foto:'img/reza.jpg' },
+    { id:'4',  jabatan:'Kadus I', nama:'M. Munir', foto:'img/munir.jpg' },
+    { id:'5',  jabatan:'Kadus II', nama:'Reza Munandar', foto:'img/reza.jpg' }
   ];
 
-  // 🔁 Loop otomatis
-  const rows = anggota.map(item => [
-    {
-      v: item.id,
-      f: createNode(item.jabatan, item.nama, item.foto)
-    },
-    item.parent,
-    item.jabatan
-  ]);
+  let html=""
 
-  dataChart.addRows(rows);
-
-  var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
-  chart.draw(dataChart, {allowHtml:true});
-}
+  anggota.forEach(item =>{
+    html+=`<div class="penjabat">
+    <div style="width:100%;height:150px;"></div>
+    <strong>${item.nama}</strong>
+    <p>${item.jabatan}</p>
+    </div>
+    `
+  })
+cardJabatan.innerHTML=html
+  console.log(cardJabatan)
 
 
   const data = [
@@ -75,44 +53,32 @@ const slogan = document.getElementById("slogan");
 const title = slogan.querySelector("h2");
 const desc = slogan.querySelector("p");
 
-let current = 0;
+let i = 0;
 
-// fungsi tampilkan slide
-function showSlide(index) {
-  slides.forEach(img => img.classList.remove("active"));
-  thumbs.forEach(t => t.classList.remove("active-thumb"));
+function slide(index){
+  slides[i].classList.remove("active")
+  thumbs[i].classList.remove("active-thumb")
+ i=index
+  slides[i].classList.add("active")
+  thumbs[i].classList.add("active-thumb")
+  title.innerText=data[i].title
+  desc.innerText=data[i].desc
+  slogan.className="text"
+  slogan.classList.add(data[i].anim)
 
-  slides[index].classList.add("active");
-  thumbs[index].classList.add("active-thumb");
-
-  // ganti teks
-  title.innerText = data[index].title;
-  desc.innerText = data[index].desc;
-
-  // reset animasi
-  slogan.className = "text";
-  setInterval(() => slogan.classList.add(data[index].anim), 2000);
-
-  current = index;
 }
+ setInterval(() =>{
+  let next=(i+1)%slides.length
+  slide(next)
+ },2000)
 
-// auto slide
-setInterval(() => {
-  let next = (current + 1) % slides.length;
-  showSlide(next);
-}, 5000);
+  thumbs.forEach((item,index) =>{
+    item.addEventListener("click",function(){
+     
+      slide(index)
+    })
+  })
 
-// klik thumbnail
-thumbs.forEach((thumb, index) => {
-  thumb.addEventListener("click", () => {
-    showSlide(index);
-  });
-});
-
-// tampil pertama
-showSlide(0);
-
-  
 
   const menu=document.getElementById("menu")
   const humberger=document.getElementById("humberger")
@@ -135,22 +101,32 @@ showSlide(0);
   const galleryData = [
   {
     id: 0,
-    foto: "https://picsum.photos/id/1011/400/300",
+    foto: "1000014325.jpg",
     desc: "Pemandangan sawah Desa Perbo di pagi hari"
   },
   {
     id: 1,
-    foto: "https://picsum.photos/id/1012/400/300",
+    foto: "1000014230.jpg",
     desc: "Kegiatan masyarakat saat panen"
   },
   {
     id: 2,
-    foto: "https://picsum.photos/id/1013/400/300",
+    foto: "1000014228.jpg",
     desc: "Jalan desa yang asri dan sejuk"
   },
   {
     id: 3,
-    foto: "https://picsum.photos/id/1014/400/300",
+    foto: "1000014232.jpg",
+    desc: "Gunung yang mengelilingi desa"
+  },
+  {
+    id: 3,
+    foto: "1000014232.jpg",
+    desc: "Gunung yang mengelilingi desa"
+  },
+  {
+    id: 3,
+    foto: "1000014232.jpg",
     desc: "Gunung yang mengelilingi desa"
   }
 ];
@@ -188,13 +164,22 @@ galleryContainer.addEventListener("click", function(e) {
 
   if (!card) return; // kalau bukan card, stop
 
-  const id = card.dataset.id;
-  const data = galleryData[id];
-
-  modal.style.display = "flex";
-  modalImg.src = data.foto;
-  modalDesc.textContent = data.desc;
+  const id = Number(card.dataset.id);
+ open(card)
 });
+
+function open(card) {
+ const data=galleryData.find(p => p.id === Number(card.dataset.id))
+const nama=card.querySelector('img')
+  modal.style.display="flex"
+
+  
+
+  modalImg.src=nama.src
+  modalDesc.textContent=data.desc
+  
+  
+}
 const closeModal = document.getElementById("closeModal");
 
 closeModal.addEventListener("click", () => {
@@ -204,6 +189,29 @@ closeModal.addEventListener("click", () => {
 modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
+  }
+});
+
+cardJabatan.addEventListener("click",function(e){
+const tutum=e.target.closest(".penjabat")
+openModal(tutum)
+})
+
+function openModal(tutum){
+  console.log(tutum)
+  document.getElementById("usak").textContent=tutum.textContent
+  document.getElementById("mandul").style.display="flex"
+}
+
+const tutupModal = document.getElementById("tutupModal");
+
+tutupModal.addEventListener("click", () => {
+ document.getElementById("mandul").style.display="none"
+});
+const mandul=document.getElementById("mandul")
+mandul.addEventListener("click", (e) => {
+  if (e.target === mandul) {
+    mandul.style.display = "none";
   }
 });
     // tombol SCROLL
@@ -260,13 +268,13 @@ document.addEventListener('mousemove', (e) => {
   x = Math.max(0, Math.min(x, maxX));
   y = Math.max(0, Math.min(y, maxY));
 
-  card.style.left = x + 'px';
-  card.style.top = y + 'px';
+  card.style.left = e.clientX + 'px';
+  card.style.top = e.clientY + 'px';
 });
 
 document.addEventListener('mouseup', () => {
   isDragging = false;
-  card.classList.remove('active'); // 🔥 ini juga penting
+  // card.classList.remove('active'); // 🔥 ini juga penting
 });
 card.addEventListener('touchstart', (e) => {
   isDragging = true;
